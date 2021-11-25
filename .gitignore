@@ -26,3 +26,6 @@ target/
 monappli-*/target/
 target
 livraison
+/.settings/
+.settings
+/.project
