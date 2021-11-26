@@ -1,63 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.objis.demomaven</groupId>
-  <artifactId>monappli</artifactId>
-  <version>1.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+	<groupId>com.objis.demomaven</groupId>
+	<artifactId>monappli</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-  <name>monappli</name>
-  <url>http://maven.apache.org</url>
-  
-  <scm>
-    <connection>scm:git:https://github.com/ggorsontanguy/multimodule_orsys.git</connection>
-    <developerConnection>scm:git:https://github.com/ggorsontanguy/multimodule_orsys.git</developerConnection>
-  </scm>
+	<name>monappli</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-	<project.version>1.1-SNAPSHOT</project.version>
-  </properties>
-  
-  <modules>
-	<module>monappli-domaine</module>
-    <module>monappli-service</module>
-    <module>monappli-dao</module>
-    <module>monappli-web</module>
-  </modules>
-  
-  <dependencyManagement>
-	<dependencies>
-		<dependency>
-		  <groupId>junit</groupId>
-		  <artifactId>junit</artifactId>
-		  <version>4.11</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<dependency>
-		  <groupId>org.hibernate</groupId>
-		  <artifactId>hibernate-core</artifactId>
-		  <version>4.2.4.Final</version>
-		</dependency>
-		<dependency>
-		  <groupId>${project.groupId}</groupId>
-		  <artifactId>monappli-domaine</artifactId>
-		  <version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>monappli-dao</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>monappli-service</artifactId>
-			<version>${project.version}</version>			
-		</dependency>
-	</dependencies>
-  </dependencyManagement>
+	<scm>
+		<connection>scm:git:https://github.com/ggorsontanguy/multimodule_orsys.git</connection>
+		<developerConnection>scm:git:https://github.com/ggorsontanguy/multimodule_orsys.git</developerConnection>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus</id>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<project.version>1.1-SNAPSHOT</project.version>
+	</properties>
+
+	<modules>
+		<module>monappli-domaine</module>
+		<module>monappli-service</module>
+		<module>monappli-dao</module>
+		<module>monappli-web</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.2.4.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>monappli-domaine</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>monappli-dao</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>monappli-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>
