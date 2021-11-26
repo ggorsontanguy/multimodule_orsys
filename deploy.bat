@@ -33,5 +33,5 @@ echo *********************************************
 
 call %tomcatpath%\bin\startup.bat
 
-start chrome http://localhost:8080/monappli-web/
+call start chrome http://localhost:8081/monappli-web/
 pause

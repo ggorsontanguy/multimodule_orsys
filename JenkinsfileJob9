@@ -1,0 +1,41 @@
+// Declarative //
+pipeline {
+	agent any
+	tools {
+        maven 'apache-maven-3.5.3'
+        jdk 'jdk-13.0.1'
+    }
+	stages {
+		stage ('Initialize') {
+            steps {
+                bat '''
+                    echo "PATH = %PATH%"
+                    echo "M2_HOME = %M2_HOME%"
+                    java -version
+                '''
+            }
+        }
+		stage('Build') {
+			steps {
+				echo 'Building..'
+				bat 'mvn install'
+			}
+		 post {
+                success {
+                    junit '**/target/surefire-reports/*.xml'
+                        }
+                 }
+               
+		}
+		stage('Test') {
+			steps {
+				echo 'Testing..'
+			}
+		}
+		stage('Deploy') {
+			steps {
+				echo 'Deploying....'
+			}
+		}
+	}
+}
