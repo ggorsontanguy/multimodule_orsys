@@ -15,6 +15,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/ggorsontanguy/multimodule_orsys.git</connection>
 		<developerConnection>scm:git:https://github.com/ggorsontanguy/multimodule_orsys.git</developerConnection>
+		<url>https://github.com/ggorsontanguy/multimodule_orsy/</url>
 	</scm>
 
 	<distributionManagement>
@@ -30,6 +31,7 @@
 
 
 	<properties>
+		<project.scm.id>github.com</project.scm.id>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
