@@ -5,7 +5,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building..'
-				bat 'cd monappli & mvn install'
+				bat 'mvn install'
 			}
 		 post {
                 success {
